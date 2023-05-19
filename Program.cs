@@ -8,9 +8,9 @@ namespace Work1
 {
     internal class Program
     {
+        #region Method1
         public static string Work1(int number)
         {
-            #region Method1
             if (number > 0)
             {
                 return $"Число положительное, {number + 5}";
@@ -18,13 +18,13 @@ namespace Work1
             else
             {
                 return $"Число отрицательное, {number - 5}";
-            } 
-            #endregion
-        }
+            }
+        } 
+        #endregion
 
-        public static string Work2(int number1,int number2, int number3)
+        #region Method2
+        public static string Work2(int number1, int number2, int number3)
         {
-            #region Method2
             if (number1 > number2 && number1 > number3)
             {
                 return $"Большее число {number1}";
@@ -38,9 +38,43 @@ namespace Work1
             else
             {
                 return $"Большее число {number3}";
-            } 
-            #endregion
+            }
         }
+        #endregion
+
+        #region Method3
+        public static string Work3(int number1Work3, int number2Work3, int number3Work3)
+        {
+            if (number1Work3 > 0 && number2Work3 > 0 && number2Work3 > 0)
+            {
+                return $"Сумма положительных чисел {number1Work3 + number2Work3 + number3Work3}";
+            }
+            if (number1Work3 > 0 && number2Work3 > 0)
+            {
+                return $"Сумма положительных чисел {number1Work3 + number2Work3}";
+            }
+            if (number2Work3 > 0 && number3Work3 > 0)
+            {
+                return $"Сумма положиткельных чисел {number2Work3 + number3Work3}";
+            }
+            if (number1Work3 > 0 && number3Work3 > 0)
+            {
+                return $"Сумма положительных чисел {number1Work3 + number3Work3}";
+            }
+            else
+            {
+                return "Положительных чисел нет";
+            }
+        }
+        #endregion
+
+        #region Method4
+        public static string Work4(int numberWork4)
+        {
+            numberWork4 = numberWork4 > 10 ? numberWork4 * 2 : numberWork4;
+            return $"Число: {numberWork4}";
+        } 
+        #endregion
         static void Main(string[] args)
         {
             Console.WriteLine("Введите номер задания (от 1 до 9) задания с 1 по 5 являются заадниями по условиям, остальные от 5 до 9 по циклам.");
@@ -82,31 +116,8 @@ namespace Work1
                     number2Work3 = Convert.ToInt32(Console.ReadLine());
                     number3Work3 = Convert.ToInt32(Console.ReadLine());
 
-                    if (number1Work3 > 0 && number2Work3 > 0 && number2Work3 > 0)
-                    {
-                        Console.WriteLine($"Сумма положительных чисел {number1Work3 + number2Work3 + number3Work3}");
-                        Console.ReadKey();
-                    }
-                    if (number1Work3 > 0 && number2Work3 > 0)
-                    {
-                        Console.WriteLine($"Сумма положительных чисел {number1Work3 + number2Work3}");
-                        Console.ReadKey();
-                    }
-                    if (number2Work3 > 0 && number3Work3 > 0)
-                    {
-                        Console.WriteLine($"Сумма положиткельных чисел {number2Work3 + number3Work3}");
-                        Console.ReadKey();
-                    }
-                    if (number1Work3 > 0 && number3Work3 > 0)
-                    {
-                        Console.WriteLine($"Сумма положительных чисел {number1Work3 + number3Work3}");
-                        Console.ReadKey();
-                    }
-                    else
-                    {
-                        Console.WriteLine("Положительных чисел нет");
-                        Console.ReadKey();
-                    }
+                    Console.WriteLine(Work3(number1Work3, number2Work3, number3Work3));
+                    Console.ReadKey();
                     break; 
                     #endregion
 
@@ -114,9 +125,8 @@ namespace Work1
                     #region Case4
                     Console.WriteLine("Введите число" + Environment.NewLine);
                     int numberWork4 = Convert.ToInt32(Console.ReadLine());
-                    numberWork4 = numberWork4 > 10 ? numberWork4 * 2 : numberWork4;
 
-                    Console.WriteLine($"Число: {numberWork4}");
+                    Console.WriteLine(Work4(numberWork4));
                     Console.ReadKey();
                     break; 
                     #endregion
