@@ -8,6 +8,39 @@ namespace Work1
 {
     internal class Program
     {
+        public static string Work1(int number)
+        {
+            #region Method1
+            if (number > 0)
+            {
+                return $"Число положительное, {number + 5}";
+            }
+            else
+            {
+                return $"Число отрицательное, {number - 5}";
+            } 
+            #endregion
+        }
+
+        public static string Work2(int number1,int number2, int number3)
+        {
+            #region Method2
+            if (number1 > number2 && number1 > number3)
+            {
+                return $"Большее число {number1}";
+            }
+
+            if (number2 > number1 && number2 > number3)
+            {
+                return $"Большее число {number2}";
+            }
+
+            else
+            {
+                return $"Большее число {number3}";
+            } 
+            #endregion
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Введите номер задания (от 1 до 9) задания с 1 по 5 являются заадниями по условиям, остальные от 5 до 9 по циклам.");
@@ -16,48 +49,31 @@ namespace Work1
             switch (numberWrok)
             {
                 case 1:
+                    #region Case1
                     Console.WriteLine("Введите число" + Environment.NewLine);
                     int number = Convert.ToInt32(Console.ReadLine());
 
-                    if (number > 0)
-                    {
-                        Console.WriteLine($"Число положительное, {number + 5}");
-                        Console.ReadKey();
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Число отрицательное, {number - 5}");
-                        Console.ReadKey();
-                    }
-                    break;
+                    Console.WriteLine(Work1(number));
+                    Console.ReadKey();
+                    break; 
+                    #endregion
 
                 case 2:
+                    #region Case2
                     Console.WriteLine("Введите три числа");
 
                     int number1 = Convert.ToInt32(Console.ReadLine());
                     int number2 = Convert.ToInt32(Console.ReadLine());
                     int number3 = Convert.ToInt32(Console.ReadLine());
 
-                    if (number1 > number2 && number1 > number3)
-                    {
-                        Console.WriteLine($"Большее число {number1}");
-                        Console.ReadKey();
-                    }
+                    Console.WriteLine(Work2(number1, number2, number3));
+                    Console.ReadKey();
 
-                    if (number2 > number1 && number2 > number3)
-                    {
-                        Console.WriteLine($"Большее число {number2}");
-                        Console.ReadKey();
-                    }
-
-                    else
-                    {
-                        Console.WriteLine($"Большее число {number3}");
-                        Console.ReadKey();
-                    }
                     break;
+                #endregion
 
                 case 3:
+                    #region Case3
                     int number1Work3, number2Work3, number3Work3;
 
                     Console.WriteLine("Введите три числа" + Environment.NewLine);
@@ -91,19 +107,23 @@ namespace Work1
                         Console.WriteLine("Положительных чисел нет");
                         Console.ReadKey();
                     }
-                    break;
+                    break; 
+                    #endregion
 
                 case 4:
+                    #region Case4
                     Console.WriteLine("Введите число" + Environment.NewLine);
                     int numberWork4 = Convert.ToInt32(Console.ReadLine());
                     numberWork4 = numberWork4 > 10 ? numberWork4 * 2 : numberWork4;
 
                     Console.WriteLine($"Число: {numberWork4}");
                     Console.ReadKey();
-                    break;
+                    break; 
+                    #endregion
 
                 case 5:
-                    Console.WriteLine("Введите день недил число (от 1 до 7)");
+                    #region Case5
+                    Console.WriteLine("Введите день недели число (от 1 до 7)");
                     int numberWork5 = Convert.ToInt32(Console.ReadLine());
 
                     switch (numberWork5)
@@ -137,9 +157,11 @@ namespace Work1
                             Console.ReadKey();
                             break;
                     }
-                    break;
+                    break; 
+                #endregion
 
                 case 6:
+                    #region Case6
                     for (int numberWork6 = 200; true; numberWork6++)
                     {
                         if (numberWork6 > 200 && numberWork6 % 17 == 0)
@@ -150,9 +172,11 @@ namespace Work1
                     }
 
                     Console.ReadKey();
-                    break;
+                    break; 
+                    #endregion
 
                 case 7:
+                    #region Case7
                     int days = 1;
                     double distance = 10;
                     double percent = 0.05 * distance;
@@ -167,9 +191,11 @@ namespace Work1
                     }
 
                     Console.ReadKey();
-                    break;
+                    break; 
+                    #endregion
 
                 case 8:
+                    #region Case8
                     Console.WriteLine("Введите число");
                     int numberWork8 = Convert.ToInt32(Console.ReadLine());
                     int factorial = 1;
@@ -186,9 +212,11 @@ namespace Work1
                     }
 
                     Console.ReadKey();
-                    break;
+                    break; 
+                #endregion
 
                 case 9:
+                    #region Case9
                     Console.WriteLine("Введите число");
                     int numberWork9 = Convert.ToInt32(Console.ReadLine());
 
@@ -202,7 +230,8 @@ namespace Work1
                     }
 
                     Console.ReadKey();
-                    break;
+                    break; 
+                    #endregion
             }
         }
     }
