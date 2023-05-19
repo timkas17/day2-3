@@ -73,6 +73,57 @@ namespace Work1
         {
             numberWork4 = numberWork4 > 10 ? numberWork4 * 2 : numberWork4;
             return $"Число: {numberWork4}";
+        }
+        #endregion
+
+        #region Method5
+        public static string Work5(int numberWork5)
+        {
+            switch (numberWork5)
+            {
+                case 1:
+                    return "Сегодня понедельник";
+                case 2:
+                    return "Сегодня вторник";
+                case 3:
+                    return "Сегодня среда";
+                case 4:
+                    return "Сегодня четверг";
+                case 5:
+                    return "Сегодня пятница";
+                case 6:
+                    return "Сегодня суббота";
+                case 7:
+                    return "Сегодня воскресенье";
+                default:
+                    return "Никакой";
+            }
+        }
+        #endregion
+
+        #region Method6
+        public static string Work6()
+        {
+            for (int numberWork6 = 200; true; numberWork6++)
+            {
+                if (numberWork6 > 200 && numberWork6 % 17 == 0)
+                {
+                    return $"Необходимое число {numberWork6}";
+                }
+            }
+        }
+        #endregion
+
+        #region Method7
+        public static string Work7(int days, double distance, double percent)
+        {
+            for (; true; distance += percent, days++)
+            {
+                if (distance == 20)
+                {
+                    return $"В {days} день он пробежал 20 км";
+                }
+            }
         } 
         #endregion
         static void Main(string[] args)
@@ -136,50 +187,14 @@ namespace Work1
                     Console.WriteLine("Введите день недели число (от 1 до 7)");
                     int numberWork5 = Convert.ToInt32(Console.ReadLine());
 
-                    switch (numberWork5)
-                    {
-                        case 1:
-                            Console.WriteLine("Сегодня понедельник");
-                            Console.ReadKey();
-                            break;
-                        case 2:
-                            Console.WriteLine("Сегодня вторник");
-                            Console.ReadKey();
-                            break;
-                        case 3:
-                            Console.WriteLine("Сегодня среда");
-                            Console.ReadKey();
-                            break;
-                        case 4:
-                            Console.WriteLine("Сегодня четверг");
-                            Console.ReadKey();
-                            break;
-                        case 5:
-                            Console.WriteLine("Сегодня пятница");
-                            Console.ReadKey();
-                            break;
-                        case 6:
-                            Console.WriteLine("Сегодня суббота");
-                            Console.ReadKey();
-                            break;
-                        case 7:
-                            Console.WriteLine("Сегодня воскресенье");
-                            Console.ReadKey();
-                            break;
-                    }
+                    Console.WriteLine(Work5(numberWork5));
+                    Console.ReadKey();
                     break; 
                 #endregion
 
                 case 6:
                     #region Case6
-                    for (int numberWork6 = 200; true; numberWork6++)
-                    {
-                        if (numberWork6 > 200 && numberWork6 % 17 == 0)
-                        {
-                            Console.WriteLine($"Необходимое число {numberWork6}");
-                            break;
-                        }
-                    }
+                    Console.WriteLine(Work6());
 
                     Console.ReadKey();
                     break; 
@@ -191,15 +206,7 @@ namespace Work1
                     double distance = 10;
                     double percent = 0.05 * distance;
 
-                    for (; true; distance += percent, days++)
-                    {
-                        if (distance == 20)
-                        {
-                            Console.WriteLine($"В {days} день он пробежал 20 км");
-                            break;
-                        }
-                    }
-
+                    Console.WriteLine(Work7(days, distance, percent));
                     Console.ReadKey();
                     break; 
                     #endregion
